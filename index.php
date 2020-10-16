@@ -6,7 +6,7 @@
   <body>
     <?php
 	    $name = "PHP Store";
-			$credit = 1000; 
+		$credit = 1000;
 
 	    echo "<h1>Welcome to ".$name."!</h1>";
 	    echo "<h2>You have $".$credit." in your wallet.</h2>";
@@ -27,6 +27,16 @@
 		    	echo "<p>".$key."</p>"; 
 		    }
 	    }
+		$amount=800;
+		$taxRate=0.0825;
+		$addedTax= $amount*$taxRate;  //amount = 800, tax = .0825
+		echo $addedTax;
+		function tax_calc($amount,$tax){
+			$calculate_tax = $amount*$tax;
+			$amount = round($amount+$calculate_tax,2);
+			return $amount;
+		}
+		echo tax_calc(750,0.223);
     ?>
   </body>
 </html>
